@@ -33,6 +33,6 @@ if ($argc < 2) {
     $storeManager->setCurrentStore($store);
 
     $testName = $argv[$rest];
-    $arguments = array_slice($argv, $rest);
+    $arguments = array_slice($argv, $rest + 1);
     $$testName($arguments);
 }

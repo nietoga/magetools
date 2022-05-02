@@ -19,13 +19,13 @@ if ($argc < 2) {
     $rest = 0;
     $opt = getopt('', $longOptions, $rest);
 
-    $methodReference = $argv[$rest];
-    $arguments = array_slice($argv, $rest + 1);
-
     $areaCode = $opt['area'] ?? Area::AREA_GLOBAL;
     $store = $opt['store'] ?? '0';
     $state->setAreaCode($areaCode);
     $storeManager->setCurrentStore($store);
+
+    $methodReference = $argv[$rest];
+    $arguments = array_slice($argv, $rest + 1);
 
     [$className, $methodName] = preg_split('/::/', $methodReference);
 
