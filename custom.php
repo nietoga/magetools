@@ -34,5 +34,5 @@ if ($argc < 2) {
 
     $testName = $argv[$rest];
     $arguments = array_slice($argv, $rest + 1);
-    $$testName($arguments);
+    $$testName(...$arguments);
 }
