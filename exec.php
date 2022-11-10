@@ -30,5 +30,7 @@ if ($argc < 2) {
     [$className, $methodName] = preg_split('/::/', $methodReference);
 
     $object = $objectManager->get($className);
-    $object->$methodName(...$arguments);
+    $result = $object->$methodName(...$arguments);
+
+    echo json_encode($result, JSON_PRETTY_PRINT) . "\n";
 }
