@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source env/phpxdebug.env
+serverName="${XDEBUG_SERVER_NAME:-"magento.test"}"
+bin/docker-compose exec -e PHP_IDE_CONFIG=serverName="$serverName" phpfpm php "$@"
